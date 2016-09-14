@@ -111,6 +111,8 @@ impl Sse2F32x4 for f32x4 {
             simd_cast(f32x2(self.0, self.1))
         }
     }
+
+    #[inline]
     fn move_mask(self) -> u32 {
         unsafe {x86_mm_movemask_ps(self) as u32}
     }
